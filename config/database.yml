@@ -1,3 +1,4 @@
+host: localhost
 
 default: &default
   adapter: postgresql
