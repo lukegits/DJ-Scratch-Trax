@@ -1,0 +1,21 @@
+<h1> Edit Wiki </h1>
+
+<div class="row">
+    <div class="col-md-4">
+      <p> Rules for Wikis : </p>
+      <ul>
+        <li> No spamming of innapropriate content. </li>
+        <li> Dont make a proofreading error! </li>
+        <li> No duplicate posts please. </li>
+      </ul>
+    </div>
+      <%= render partial: 'wikis/form', locals: { f: f } %>
+
+      <% if @wiki.private %>
+			   <%= render partial: 'collaborators/form', locals: { f: f } %>
+		  <% end %>
+
+      <%= f.submit "Save", class: 'btn btn-success' %>
+      <% end %>
+    </div>
+</div>
