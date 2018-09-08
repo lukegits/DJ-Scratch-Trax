@@ -69,3 +69,5 @@ gem 'omniauth-google-oauth2'
 gem 'bootstrap-sass'
 
 gem 'pg'
+
+gem 'bcrypt'
