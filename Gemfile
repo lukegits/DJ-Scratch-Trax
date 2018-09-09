@@ -71,3 +71,9 @@ gem 'bootstrap-sass'
 gem 'pg'
 
 gem 'bcrypt'
+
+gem 'rinku'
+
+gem 'jquery-rails'
+ 
+gem 'sdoc', '~> 0.4.0', group: :doc
