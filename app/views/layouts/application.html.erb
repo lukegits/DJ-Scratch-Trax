@@ -1,38 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head >
-    <title>Scratch</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head >
+  <title>Scratch</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <!-- Custom styles for this template -->
+     <link href="https://blackrockdigital.github.io/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
+
+</head>
 
 
 
-  <body>
-  
+<body>
 
-    <div class="container">
-      <ul class="nav nav-tabs">
-        <li><%= link_to "Home", root_path %></li>
-       <li><%= link_to "About", about_path %></li>
-       <li><%= link_to "Topics", topics_path %></li>
-      </ul>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Topics", topics_path %></li>
+    </ul>
 
-      <% if flash[:notice] %>
-               <div class="alert alert-success">
-                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                 <%= flash[:notice] %>
-               </div>
-             <% elsif flash[:alert] %>
-               <div class="alert alert-warning">
-                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                 <%= flash[:alert] %>
-               </div>
-             <% end %>
+    <% if flash[:notice] %>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:notice] %>
+    </div>
+    <% elsif flash[:alert] %>
+    <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:alert] %>
+    </div>
+    <% end %>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
-</div>
-  </body>
+
+       <!-- Signup Section -->
+       <section id="signup" class="signup-section">
+         <div class="container">
+           <div class="row">
+             <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+               <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+               <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+
+               <form class="form-inline d-flex">
+                 <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
+                 <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
+               </form>
+
+             </div>
+           </div>
+         </div>
+       </section>
+
+    <!-- Footer -->
+    <footer class="bg-black small text-center text-white-50">
+      <div class="container">
+        Copyright &copy; Luke T. Chavez 2018
+      </div>
+    </footer>
+  </div>
+</body>
 </html>

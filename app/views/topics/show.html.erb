@@ -7,7 +7,7 @@
 <% end %>
 <div class="row">
   <div class="col-md-8">
-    <p class="lead"><%= @topic.description %></p>
+    <p class="lead"><%= auto_link @topic.description %></p>
     <!-- #10 -->
     <% @topic.posts.each do |post| %>
     <div class="media">
