@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'home', to: 'home#show'
   get 'welcome/index'
   get 'me', to: 'me#show', as: 'me'
-
+  
 
   root to: "home#show"
 

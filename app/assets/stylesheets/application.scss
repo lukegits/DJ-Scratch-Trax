@@ -16,6 +16,112 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
  body {
-   background-image: url(https://imgur.com/a/kMpq5ng);
-  }
+  font-family: helvetica, arial, verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #fff;
+  background: #393939;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  /* general font niceness? */
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #ccc;
+ }
+
+ h1,
+ h2 {
+  font-family: "Helvetica Neue", helvetica, arial, verdana, sans-serif;
+  font-weight: 100;
+ }
+
+ /* skin the turntable body? see turntable.css for more. */
+ .turntable .frame {
+  background-color: #333;
+  background-image: url(image/textures/textured_paper.png);
+  /* scale for retina, etc. */
+  background-size: 250px 250px;
+  /* classic champagne-ish color? */
+  /* background: #abacac; */
+ }
+
+ div.about {
+  position: relative;
+  z-index: 2;
+  margin: 0px 0px -4% 5%;
+  color: #fff;
+ }
+
+ div.about h1 {
+  font-size: 3.275em;
+  margin: 0px 0px 0.1em 0px;
+ }
+
+ div.about h2 {
+  font-size: 2.5em;
+  margin: 0.75em 0px 0.2em 0px;
+ }
+
+ div.about a {
+  text-decoration: none;
+  color: #fff;
+ }
+
+ div.about p {
+  line-height: 1.5em;
+  margin: 0px 0px 0.25em 0px;
+ }
+
+ div.about p:last-of-type {
+  margin-bottom: 2em;
+ }
+
+ ul,
+ .indent {
+  padding-left: 4em;
+ }
+
+ ul {
+  clear: both;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  color: #999;
+ }
+
+ ul li {
+  line-height: 1.4em;
+ }
+
+ ul li a {
+  position: relative;
+  padding: 0px 3px;
+  margin: 0px -3px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px;
+ }
+
+ b {
+  font-weight: 500;
+ }
+
+ code {
+  font-family: "lucida console", "courier new", monaco, monospace;
+  font-size: 1em;
+  color: #99ff99;
+ }
+
+ div.about p a,
+ ul li a {
+  color: #99ccff;
+ }
+
+ div.about p a:hover,
+ ul li a:hover {
+  background-color: #000;
+  color: #fff;
+  outline: 1px solid rgba(255,255,255,0.1);
+ }
