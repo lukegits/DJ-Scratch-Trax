@@ -1,22 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user
+  include SessionsHelper
 
-  def index
-    @projects = Project.search(params[:search])
+    private
+  # #10
+    def require_sign_in
+      unless current_user
+        flash[:alert] = "You must be logged in to do that"
+  # #11
+        redirect_to new_session_path
+      end
+    end
+
   end
-
-  def authenticate
-  	redirect_to :login unless user_signed_in?
-  end
-
-  def current_user
-  	@current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
-  def user_signed_in?
-  	# converts current_user to a boolean by negating the negation
-  	!!current_user
-  end
-
-end

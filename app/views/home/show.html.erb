@@ -1,9 +1,16 @@
 <h1> Welcome to DJ Scratch Trax!  Please login to continue </h1>
-<a href="/auth/google_oauth2">Sign in with Google</a>
+<head>
+<meta charset="UTF-8" />
+<div class="jumbotron">
 
-<script type="text/javascript" src="../script/soundmanager2.js"></script>
-<script src="javascripts/turntable.js"></script>
-<script src="javascripts/turntable-app.js"></script>
+   <p>
+  <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary' %>
+   </p>
+ </div>
+
+<script type="text/javascript" src="../../../script/soundmanager2.js"></script>
+<script src="../../assets/javascripts/turntable.js"></script>
+<script src="../../assets/javascripts/turntable-app.js"></script>
 
 </head>
 
