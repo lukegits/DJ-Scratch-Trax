@@ -15,64 +15,68 @@
 </head>
 
 <body>
-
+  
   <div class="container">
     <ul class="nav nav-tabs">
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "About", about_path %></li>
       <li><%= link_to "Topics", topics_path %></li>
       <% if current_user %>
-           <li class="pull-right"><%= link_to "#{current_user.name} -Sign Out", session_path(current_user), method: :delete %></li>
-         <% else %>
-           <li class="pull-right"><%= link_to "Sign In", new_session_path %></li>
-           <li class="pull-right"><%= link_to "Sign Up", new_user_path %></li>
-         <% end %>
+      <li class="pull-right"><%= link_to "Sign Out", session_path(current_user), method: :delete %></li>
 
-    </ul>
-
-
-
-    <% if flash[:notice] %>
-    <div class="alert alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:notice] %>
+      <li class="pull-right"><%= image_tag current_user.avatar_url(48) %></li>
+      <li class="pull-right"><%= link_to current_user.name, user_path(current_user) %></li>
     </div>
-    <% elsif flash[:alert] %>
-    <div class="alert alert-warning">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:alert] %>
-    </div>
+    <% else %>
+    <li class="pull-right"><%= link_to "Sign In", new_session_path %></li>
+    <li class="pull-right"><%= link_to "Sign Up", new_user_path %></li>
     <% end %>
 
+  </ul>
 
 
-    <%= yield %>
 
-    <!-- Signup Section -->
-    <section id="signup" class="signup-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-lg-8 mx-auto text-center">
+  <% if flash[:notice] %>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:notice] %>
+  </div>
+  <% elsif flash[:alert] %>
+  <div class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:alert] %>
+  </div>
+  <% end %>
 
-            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-            <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
 
-            <form class="form-inline d-flex">
-              <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
-              <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
-            </form>
 
-          </div>
+  <%= yield %>
+
+  <!-- Signup Section -->
+  <section id="signup" class="signup-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+          <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+
+          <form class="form-inline d-flex">
+            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
+            <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
+          </form>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-black small text-center text-white-50">
-      <div class="container">
-        Copyright &copy; Dj Scratch Trax 2018
-      </div>
-    </footer>
-  </div>
+  <!-- Footer -->
+  <footer class="bg-black small text-center text-white-50">
+    <div class="container">
+      Copyright &copy; Dj Scratch Trax 2018
+    </div>
+  </footer>
+</div>
 </body>
 </html>
