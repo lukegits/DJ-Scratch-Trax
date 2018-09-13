@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
-before_action :require_sign_in, except: :show
 
-before_action :authorize_user, except: [:show, :new, :create]
+  before_action :require_sign_in, except: :show
+
+  # #10
+  before_action :authorize_user, except: [:show, :new, :create]
+
   def show
     @post = Post.find(params[:id])
   end
@@ -11,13 +14,12 @@ before_action :authorize_user, except: [:show, :new, :create]
     @post = Post.new
   end
 
-  def create
-    # #9
-    @post = @topic.posts.build(post_params)
 
+  def create
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts.build(post_params)
     @post.user = current_user
 
-    # #10
     if @post.save
       # #11
       flash[:notice] = "Post was saved."
@@ -28,12 +30,6 @@ before_action :authorize_user, except: [:show, :new, :create]
       render :new
     end
   end
-
-  def edit
-    @post = Post.find(params[:id])
-
-  end
-
   def update
     @post = Post.find(params[:id])
     @post.assign_attributes(post_params)
@@ -43,7 +39,7 @@ before_action :authorize_user, except: [:show, :new, :create]
       redirect_to [@post.topic, @post]
     else
       flash.now[:alert] = "There was an error saving the post. Please try again."
-      render :edit
+      redirect_to [@post.topic, @post]
     end
   end
   def destroy
@@ -58,17 +54,21 @@ before_action :authorize_user, except: [:show, :new, :create]
       render :show
     end
   end
-  private
-   def post_params
-     params.require(:post).permit(:title, :body)
-   end
 
-   def authorize_user
-        post = Post.find(params[:id])
-    # #11
-        unless current_user == post.user || current_user.admin?
-          flash[:alert] = "You must be an admin to do that."
-          redirect_to [post.topic, post]
-        end
-      end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+  private
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
+  def authorize_user
+    post = Post.find(params[:id])
+# #11
+    unless current_user == post.user || current_user.admin?
+      flash[:alert] = "You must be an admin to do that."
+      redirect_to [post.topic, post]
+    end
+  end
 end
