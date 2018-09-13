@@ -2,9 +2,9 @@
 <%= form_tag(topics_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Topics" %>
 <%= submit_tag "Search" %>
-<% if user_is_authorized_for_topics? %>
+
 <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
-<% end %>
+
 <% end %>
 <div class="row">
   <div class="col-md-8">
