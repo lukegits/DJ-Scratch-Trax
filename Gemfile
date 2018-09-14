@@ -82,3 +82,5 @@ gem 'rails_autolink'
 gem 'bcrypt'
 
 gem 'devise'
+
+gem 'soundmanager-rails'

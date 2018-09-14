@@ -4,8 +4,8 @@
 
 .turntable,
 .turntable img.stub {
- width: 50%;
- max-width: 1080px;
+ width: 45%;
+ max-width: 628px;
  /* optional: max-width: 628px; if you want nice retina-scale graphics at full-width. */
 }
 
