@@ -4,17 +4,17 @@
 
 .turntable,
 .turntable img.stub {
- width: 45%;
+ width: 40%;
  max-width: 628px;
  /* optional: max-width: 628px; if you want nice retina-scale graphics at full-width. */
 }
 
 .turntable .table-bg {
  position: absolute;
- top: -5px;
- left: -2px;
- width: 1110%;
- height: 2215%;
+ top: -21px;
+ left: 0px;
+ width: 1600%;
+ height: 2400%;
  background: transparent url(http://www.schillmania.com/projects/soundmanager2/demo/turntable/image/tt_table.png) no-repeat 0px 0px;
  background-size: contain;
 }
@@ -22,12 +22,12 @@
 .turntable .frame,
 .turntable .bd {
  position: absolute;
- top: 2.5%;
- left: 5.5%;
+ top: 0%;
+ left: 6%;
  height: 2085%;
  width: 95%;
  padding: 0.056936% 0px 0px 0.099%;
- border-radius: 5px;
+ border-radius: 10px;
  -webkit-background-clip: padding-box;
  background-clip: padding-box;
  overflow: hidden;
